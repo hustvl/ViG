@@ -47,7 +47,7 @@ TODO
 
 
 ## Acknowledgements
-This code is developed on the top of [Vim](https://github.com/hustvl/Vim), [VMamba](https://github.com/MzeroMiko/VMamba), and [FLA](https://github.com/sustcsonglin/flash-linear-attention). Thanks for their great works.
+This code is developed on the top of [Vim](https://github.com/hustvl/Vim), [VMamba](https://github.com/MzeroMiko/VMamba), [VRWKV](https://github.com/OpenGVLab/Vision-RWKV), and [FLA](https://github.com/sustcsonglin/flash-linear-attention). Thanks for their great works.
 ## Citation
 If you find ViG is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
