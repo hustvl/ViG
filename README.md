@@ -55,7 +55,7 @@ If you find ViG is useful in your research or applications, please consider givi
  @article{lanegap,
   title={ViG: Linear-complexity Visual Sequence Learning with Gated Linear Attention},
   author={Bencheng Liao and Xinggang Wang and Lianghui Zhu and Qian Zhang and Chang Huang},
-  journal={arXiv preprint arXiv:2405.XXXXX},
+  journal={arXiv preprint arXiv:2405.18425},
   year={2024}
 }
 ```
