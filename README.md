@@ -52,7 +52,7 @@ This code is developed on the top of [Vim](https://github.com/hustvl/Vim), [VMam
 If you find ViG is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
 ```bibtex
- @article{lanegap,
+ @article{vig,
   title={ViG: Linear-complexity Visual Sequence Learning with Gated Linear Attention},
   author={Bencheng Liao and Xinggang Wang and Lianghui Zhu and Qian Zhang and Chang Huang},
   journal={arXiv preprint arXiv:2405.18425},
