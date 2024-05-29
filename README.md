@@ -8,7 +8,7 @@
 
 (<sup>:email:</sup>) corresponding author.
 
-ArXiv Preprint ([arXiv 2405.XXXX](https://arxiv.org/abs/2405.XXXX))
+ArXiv Preprint ([arXiv 2405.18425](https://arxiv.org/abs/2405.18425))
 
 </div>
 
