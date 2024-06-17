@@ -1,0 +1,27 @@
+DATA:
+  BATCH_SIZE: 128
+  NUM_WORKERS: 16
+MODEL:
+  TYPE: vig_h
+  NAME: vig_h_base
+  DROP_PATH_RATE: 0.6
+  HIERVIG:
+    EMBED_DIM: 128
+    DEPTHS: [ 2, 2, 17, 2 ]
+    NUM_HEADS: [ 4, 8, 16, 32 ]
+    ATTN_MODELS: ["fused_chunk","fused_chunk","fused_recurrent","fused_recurrent"]
+    EXPAND_K: 0.5
+    EXPAND_V: 1.0
+    USE_ACT_IN_CONV: False
+    USE_OUT_ACT: False
+    ROPE_MODE: 'none'
+    MLP_RATIO: 4.0
+    DOWNSAMPLE: "v3"
+    PATCHEMBED: "v2"
+    NORM_LAYER: "ln2d"
+    GMLP: True
+AMP_ENABLE: True
+AMP_DTYPE: 'fp16'
+TRAIN:
+  LOSS_SCALER:
+    USE_SCALE: True

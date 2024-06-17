@@ -1,0 +1,26 @@
+DATA:
+  BATCH_SIZE: 128
+  NUM_WORKERS: 16
+MODEL:
+  TYPE: vig
+  NAME: vig_tiny
+  VIG:
+    ATTN_MODEL: 'fused_chunk'
+    USE_MIDDLE_CLS_TOKEN: False
+    IF_CLS_TOKEN: False
+    CLASSIFICATION_MODE: 'avgpool'
+    NUM_HEADS: 3 
+    EXPAND_K: 0.5
+    EXPAND_V: 1.0
+    EMBED_DIM: 192
+    PATCH_EMBED_VERSION: 'v2'
+    USE_OUT_ACT: True
+    USE_OUT_GATE: False
+    IF_ABS_POS_EMBED: True
+  # DROP_PATH_RATE: 0.2
+  # VSSM:
+AMP_ENABLE: False
+TRAIN:
+  BASE_LR: 1e-3
+  LOSS_SCALER:
+    USE_SCALE: False

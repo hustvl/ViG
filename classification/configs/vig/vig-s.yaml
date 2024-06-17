@@ -1,0 +1,28 @@
+DATA:
+  BATCH_SIZE: 128
+  NUM_WORKERS: 16
+MODEL:
+  TYPE: vig
+  NAME: vig_small
+  VIG:
+    ATTN_MODEL: 'fused_chunk'
+    USE_MIDDLE_CLS_TOKEN: False
+    IF_CLS_TOKEN: False
+    CLASSIFICATION_MODE: 'avgpool'
+    NUM_HEADS: 6 # only support 4, use 2 will cause illega memory access
+    EXPAND_K: 0.5
+    EXPAND_V: 1.0
+    EMBED_DIM: 384
+    PATCH_EMBED_VERSION: 'v2'
+    USE_OUT_ACT: False
+    USE_OUT_GATE: False
+    IF_ABS_POS_EMBED: True
+    IF_RC_PE: False
+    ROPE_MODE: 'none'
+    USE_ACT_IN_CONV: False
+  DROP_PATH_RATE: 0.2
+AMP_ENABLE: False
+TRAIN:
+  WEIGHT_DECAY: 0.1
+  LOSS_SCALER:
+    USE_SCALE: False
