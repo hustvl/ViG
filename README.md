@@ -43,7 +43,64 @@ However, their advantage in terms of actual runtime speed is not significant. To
 ![framework](assets/resolution.png "framework")
 
 ## Getting Started
-TODO
+### Prepare Environment
+```
+git clone https://github.com/hustvl/ViG.git
+cd ViG
+conda create -n vig python=3.8
+conda activate vig
+```
+### Install Packages
+```
+# torch
+conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# requirement
+pip install -r requirement.txt
+
+# GLA
+pip install triton==2.2.0
+cd flash-linear-attention
+python setup.py develop
+```
+
+## Train Your ViG
+```
+cd classification
+export CONFIG=configs/vig/vig-s.yaml
+python -m torch.distributed.launch --nnodes=1 --node_rank=0 --nproc_per_node=8 \
+    --master_addr="127.0.0.1" --master_port=29501 main.py \
+    --cfg ${CONFIG} --data-path data/IN1K/ \
+    --output /path/to/output
+```
+
+## Model Weights
+### Non-hierarchical Architectures
+| Model | #param. | Top-1 Acc. | Hugginface Repo|
+| -------- | -------- | -------- | -------- |
+| ViG-T    | 6M     | 77.2     | https://huggingface.co/hustvl/ViG/tree/main |
+| ViG-S    | 23M     | 81.7     | https://huggingface.co/hustvl/ViG/tree/main     |
+| ViG-B   | 89M     | 82.6     | https://huggingface.co/hustvl/ViG/tree/main     |
+
+### Hierarchical Architectures
+| Model | #param. | Top-1 Acc. | Hugginface Repo|
+| -------- | -------- | -------- | -------- |
+| ViG-H-T    | 29M     | 82.8     | https://huggingface.co/hustvl/ViG/tree/main     |
+| ViG-H-S    | 50M     | 83.8     | https://huggingface.co/hustvl/ViG/tree/main     |
+| ViG-H-B   | 89M     | 84.2     | https://huggingface.co/hustvl/ViG/tree/main     |
+
+
+## Evaluation on Provided Weights
+To evaluate `ViG-S` on ImageNet-1K, run:
+```
+python -m torch.distributed.launch --nnodes=1 --node_rank=0 --nproc_per_node=1 \
+  --master_port=29501 main.py \
+  --cfg configs/vig/vig-s.yaml \
+  --batch-size 128 --data-path ./data/IN1K/ \
+  --output ./output/ --pretrained /path/to/ckpt \
+  --eval
+```
+
 
 
 ## Acknowledgements
