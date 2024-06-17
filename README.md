@@ -2,13 +2,13 @@
 <h1>ViG </h1>
 <h3>Linear-complexity Visual Sequence Learning with Gated Linear Attention</h3>
 
-[Bencheng Liao](https://github.com/LegendBC)<sup>1,2</sup>, [Xinggang Wang](https://xinggangw.info/)<sup>2 :email:</sup>, [Lianghui Zhu](https://scholar.google.com/citations?user=NvMHcs0AAAAJ&hl=en)<sup>2</sup>, [Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>, [Chang Huang](https://scholar.google.com/citations?user=IyyEKyIAAAAJ&hl=zh-CN)<sup>3</sup>, 
+[Bencheng Liao](https://github.com/LegendBC)<sup>1,2</sup>, [Xinggang Wang](https://xinggangw.info/)<sup>2 :email:</sup>, [Lianghui Zhu](https://github.com/Unrealluver)<sup>2</sup>, [Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>, [Chang Huang](https://scholar.google.com/citations?user=IyyEKyIAAAAJ&hl=zh-CN)<sup>3</sup>, 
  
 <sup>1</sup>  Institute of Artificial Intelligence, HUST, <sup>2</sup>  School of EIC, HUST,  <sup>3</sup> Horizon Robotics
 
 (<sup>:email:</sup>) corresponding author.
 
-ArXiv Preprint ([arXiv 2405.XXXX](https://arxiv.org/abs/2405.XXXX))
+ArXiv Preprint ([arXiv 2405.18425](https://arxiv.org/abs/2405.18425))
 
 </div>
 
@@ -109,10 +109,10 @@ This code is developed on the top of [Vim](https://github.com/hustvl/Vim), [VMam
 If you find ViG is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
 ```bibtex
- @article{lanegap,
+ @article{vig,
   title={ViG: Linear-complexity Visual Sequence Learning with Gated Linear Attention},
   author={Bencheng Liao and Xinggang Wang and Lianghui Zhu and Qian Zhang and Chang Huang},
-  journal={arXiv preprint arXiv:2405.XXXXX},
+  journal={arXiv preprint arXiv:2405.18425},
   year={2024}
 }
 ```
