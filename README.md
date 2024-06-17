@@ -18,7 +18,7 @@ ArXiv Preprint ([arXiv 2405.18425](https://arxiv.org/abs/2405.18425))
 
 
 ### News
-
+* **`June 17th, 2024`:** We release an initial version of ViG with code and weights.
 * **`May 29th, 2024`:** We released our paper on Arxiv. Code/Models are coming soon. Please stay tuned! ☕️
 
 
