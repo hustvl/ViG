@@ -65,6 +65,7 @@ python setup.py develop
 ```
 
 ## Train Your ViG
+For single node:
 ```
 cd classification
 export CONFIG=configs/vig/vig-s.yaml
@@ -72,6 +73,22 @@ python -m torch.distributed.launch --nnodes=1 --node_rank=0 --nproc_per_node=8 \
     --master_addr="127.0.0.1" --master_port=29501 main.py \
     --cfg ${CONFIG} --data-path data/IN1K/ \
     --output /path/to/output
+```
+For two nodes:
+```
+cd classification
+export CONFIG=configs/vig/vig-b.yaml
+export MASTER_IP=XXXXXXX
+# for first node
+python -m torch.distributed.launch --nnodes=2 --node_rank=0 --nproc_per_node=8 \
+    --master_addr=${MASTER_IP} --master_port=29501 main.py \
+    --cfg ${CONFIG} --data-path data/IN1K/ \
+    --output /path/to/output --batch-size 64
+# for second node, modify the node_rank arg
+python -m torch.distributed.launch --nnodes=2 --node_rank=1 --nproc_per_node=8 \
+    --master_addr=${MASTER_IP} --master_port=29501 main.py \
+    --cfg ${CONFIG} --data-path data/IN1K/ \
+    --output /path/to/output --batch-size 64
 ```
 
 ## Model Weights
